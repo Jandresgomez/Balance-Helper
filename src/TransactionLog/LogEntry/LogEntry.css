@@ -1,0 +1,16 @@
+.LogEntry {
+    background-color: lightsteelblue;
+    display: inline-flex;
+    padding: 0px 5px 0px 5px;
+    border: 2px solid gray;
+    box-shadow: 2px 2px rgb(182, 177, 177);
+    margin: 5px 10px 5px 10px;
+}
+
+.valueBox {
+    padding: 0px 10px 0px 10px;
+}
+
+.EntryContainer {
+    text-align: center;
+}
