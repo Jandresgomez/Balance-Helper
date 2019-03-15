@@ -1,4 +1,8 @@
-.EntryContainer {
+.EntryCreatorFields {
+    display: inline-flex;
+}
+
+.EntryCreatorContainer {
     background-color: lightsteelblue;
     display: inline-block;
     padding: 0px 5px 0px 5px;
@@ -7,18 +11,7 @@
     margin: 5px 10px 5px 10px;
 }
 
-.LogInfo {
+.InputContainer {
     display: inline-flex;
-}
-
-.LogButtons {
-    margin: 10px;
-}
-
-.valueBox {
-    padding: 0px 10px 0px 10px;
-}
-
-.EntryContainer {
-    text-align: center;
-}
+    margin: 5px 10px 5px 10px;
+} 
