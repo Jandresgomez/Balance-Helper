@@ -18,7 +18,12 @@ const entryCreator = (props) => {
                     <input type="text"></input>
                 </div>
             </div>
-            <button onClick={null}>Submit</button>
+            <button
+            className="SubmitEntryButton"
+            onClick={null}
+            >
+            Submit
+            </button>
         </div>
     );
 };

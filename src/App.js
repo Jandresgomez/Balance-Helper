@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainMenu from './MainMenu/MainMenu.js'
 import LogList from './TransactionLog/LogList/LogList.js'
+import EntryCreator from './EntryCreator/EntryCreator.js';
 import './App.css'
 
 class App extends Component {
@@ -8,9 +9,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      showLog: false
+      showLog: false,
+      showCreator: true
     };
   }
+
+  toggleCreatorHandler = () => {
+    this.setState({
+      showCreator: !this.state.showCreator
+    });
+  };
 
   toggleLogHandler = () => {
     this.setState({
@@ -22,12 +30,17 @@ class App extends Component {
     let log = null;
     if(this.state.showLog) log = (<LogList/>);
 
+    let creator = null;
+    if(this.state.showCreator) creator = (<EntryCreator/>);
+
     return (
       <div className="App">
         <MainMenu
+        toggleCreatorHandler={() => this.toggleCreatorHandler()}
         toggleLogHandler={() => this.toggleLogHandler()}
         />
-        {log}
+        <div>{creator}</div>
+        <div>{log}</div>
       </div>
     );
   }

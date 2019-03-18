@@ -6,13 +6,18 @@ class MainMenu extends Component {
         return (
             <div className="MainMenu">
                 <div className="TitleContainer">
-                    <p>Balance - Helper</p>
+                    <h1 className="MenuTitle">Balance Helper</h1>
                 </div>
                 <div className="MenuBar">
                     <button 
-                    className="ShowLogButton"
+                    className="MenuBarButton"
                     onClick={this.props.toggleLogHandler}>
                     Show Log
+                    </button>
+                    <button 
+                    className="MenuBarButton"
+                    onClick={this.props.toggleCreatorHandler}>
+                    Show Creator
                     </button>
                 </div>
             </div>

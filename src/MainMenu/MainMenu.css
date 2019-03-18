@@ -1,5 +1,8 @@
+.MenuTitle {
+    display: inline;
+}
+
 .MainMenu {
-    background-color: greenyellow;
     width: 100%;
     height: 20%;
     margin: 0px;
@@ -7,21 +10,22 @@
 }
 
 .TitleContainer {
-    background-color: greenyellow;
+    background-color: lightsteelblue;
     width: 100%;
     height: 80%;
     display: block;
 }
 
 .MenuBar {
-    background-color: green;
+    background-color: steelblue;
     width: 100%;
     height: 20%;
     display: block;
 }
 
-.ShowLogButton {
-    margin: 0 auto;
+.MenuBarButton {
+    margin: 2px;
     width: 10%;
+    white-space: nowrap;
 }
   

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LogEntry from '../LogEntry/LogEntry.js';
-import EntryCreator from '../EntryCreator/EntryCreator.js';
 import './LogList.css';
 
 class LogList extends Component {
@@ -9,9 +8,24 @@ class LogList extends Component {
 
         this.state = {
             entries: [
-                { id: "ENT001", date: "11/03/2019" , val: 2400, description: "Transporte (SITP)" },
-                { id: "ENT002", date: "11/03/2019" , val: 11000, description: "N/A" },
-                { id: "ENT003", date: "11/03/2019" , val: 17500, description: "Almuerzo" }
+                { 
+                    id: "ENT001",
+                    date: "11/03/2019",
+                    val: 2400,
+                    description: "Transporte (SITP)"
+                },
+                { 
+                    id: "ENT002",
+                    date: "11/03/2019",
+                    val: 11000,
+                    description: "N/A"
+                },
+                {
+                    id: "ENT003",
+                    date: "11/03/2019",
+                    val: 17500,
+                    description: "Almuerzo"
+                }
             ]
         };
     };
@@ -23,10 +37,6 @@ class LogList extends Component {
         this.setState({
             entries: list
         })
-    };
-
-    valChangedHandler = (event, index) =>{
-
     };
 
     addEntryHandler = (date, val, description) => {
@@ -67,9 +77,6 @@ class LogList extends Component {
             <div>
                 <div className="LogList">
                     {entries}
-                </div>
-                <div>
-                    <EntryCreator/>
                 </div>
             </div>
         );
