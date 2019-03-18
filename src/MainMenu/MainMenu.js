@@ -11,13 +11,13 @@ class MainMenu extends Component {
                 <div className="MenuBar">
                     <button 
                     className="MenuBarButton"
-                    onClick={this.props.toggleLogHandler}>
-                    Show Log
+                    onClick={this.props.toggleLogListHandler}>
+                    Show Log List
                     </button>
                     <button 
                     className="MenuBarButton"
                     onClick={this.props.toggleCreatorHandler}>
-                    Show Creator
+                    Show Entry Creator
                     </button>
                 </div>
             </div>

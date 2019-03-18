@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MainMenu from './MainMenu/MainMenu.js'
-import LogList from './TransactionLog/LogList/LogList.js'
-import EntryCreator from './EntryCreator/EntryCreator.js';
+import LogContainer from './TransactionLog/LogContainer/LogContainer.js'
 import './App.css'
 
 class App extends Component {
@@ -20,27 +19,24 @@ class App extends Component {
     });
   };
 
-  toggleLogHandler = () => {
+  toggleLogListHandler = () => {
     this.setState({
       showLog: !this.state.showLog
     });
   };
   
   render() {
-    let log = null;
-    if(this.state.showLog) log = (<LogList/>);
-
-    let creator = null;
-    if(this.state.showCreator) creator = (<EntryCreator/>);
 
     return (
       <div className="App">
         <MainMenu
         toggleCreatorHandler={() => this.toggleCreatorHandler()}
-        toggleLogHandler={() => this.toggleLogHandler()}
+        toggleLogListHandler={() => this.toggleLogListHandler()}
         />
-        <div>{creator}</div>
-        <div>{log}</div>
+        <LogContainer
+        showLog={this.state.showLog}
+        showCreator={this.state.showCreator}
+        />
       </div>
     );
   }

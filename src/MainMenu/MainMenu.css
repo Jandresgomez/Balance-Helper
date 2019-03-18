@@ -25,7 +25,6 @@
 
 .MenuBarButton {
     margin: 2px;
-    width: 10%;
+    width: auto;
     white-space: nowrap;
 }
-  
