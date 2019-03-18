@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import MainMenu from './MainMenu/MainMenu.js'
 import LogList from './TransactionLog/LogList/LogList.js'
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +24,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button onClick={this.toggleLogHandler}>Show Log</button>
+        <MainMenu
+        toggleLogHandler={() => this.toggleLogHandler()}
+        />
         {log}
       </div>
     );
