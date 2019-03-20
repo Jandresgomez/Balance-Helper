@@ -41,6 +41,20 @@ class LogContainer extends Component {
         })
     };
 
+    editEntryHandler = (date, val, description, index) => {
+        let entry = {...this.state.entries[index]}
+        entry.date = date;
+        entry.val = val;
+        entry.description = description;
+
+        const list = [...this.state.entries];
+        list[index] = entry;
+        
+        this.setState({
+            entries: list
+        })
+    };
+
     addEntryHandler = (date, val, description) => {
         let entry = {
             id: "ENT" + this.state.idSequence,
@@ -74,6 +88,7 @@ class LogContainer extends Component {
                     date={entry.date}
                     description={entry.description}
                     deleteClick={() => this.deleteEntryHandler(index)}
+                    editAction={(date, val, description) => this.editEntryHandler(date, val, description, index)}
                     key={entry.id}
                     />
                 );

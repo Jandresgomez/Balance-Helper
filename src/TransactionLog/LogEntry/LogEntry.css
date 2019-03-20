@@ -15,6 +15,10 @@
     margin: 10px;
 }
 
+.LogButtons * {
+    margin: 0px 2px 0px 2px;    
+} 
+
 .valueBox {
     padding: 0px 10px 0px 10px;
 }
