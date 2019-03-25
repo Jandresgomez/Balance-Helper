@@ -9,12 +9,15 @@ class LogEntry extends Component {
             showEditBar: false,
             val: props.val,
             date: props.date,
-            description: props.description
+            description: props.description,
+            newVal: props.val,
+            newDate: props.date,
+            newDescription: props.description
         };
     }
 
     saveEditHandler = () => {
-        this.props.editAction(this.state.date, this.state.val, this.state.description);
+        this.props.editAction(this.state.newDate, this.state.newVal, this.state.newDescription);
         this.toggleEditBarHandler();
     };
 
@@ -26,19 +29,19 @@ class LogEntry extends Component {
 
     valChangedHandler = (event) => {
         this.setState({
-            val: event.target.value
+            newVal: event.target.value
         });
     };
 
     dateChangedHandler = (event) => {
         this.setState({
-            date: event.target.value
+            newDate: event.target.value
         });
     }
 
     descriptionChangedHandler = (event) => {
         this.setState({
-            description: event.target.value
+            newDescription: event.target.value
         });
     }
 
@@ -50,7 +53,7 @@ class LogEntry extends Component {
                         <input
                         type="text"
                         onChange={this.dateChangedHandler}
-                        value={this.state.date}
+                        value={this.state.newDate}
                         />
                     </div>
                     <div className="InputContainer">
@@ -58,7 +61,7 @@ class LogEntry extends Component {
                         <input 
                         type="text"
                         onChange={this.valChangedHandler}
-                        value={this.state.val}
+                        value={this.state.newVal}
                         />
                     </div>
                     <div className="InputContainer">
@@ -66,7 +69,7 @@ class LogEntry extends Component {
                         <input
                         type="text"
                         onChange={this.descriptionChangedHandler}
-                        value={this.state.description}
+                        value={this.state.newDescription}
                         />
                 </div>
             </div>
@@ -80,16 +83,19 @@ class LogEntry extends Component {
             </div>
         );
 
+        let deleteButton = (<button className="DeleteButton" onClick={this.props.deleteClick}>Delete Item</button>);
         let saveButton = (<button className="SaveEditButton" onClick={this.saveEditHandler}>Save</button>);
-        let showEditBarButton = (<button className="ShowEditBarButton" onClick={this.toggleEditBarHandler}>Edit Item</button> );
-    
+        let showEditBarButton = (<button className="ShowEditBarButton" onClick={this.toggleEditBarHandler}>Edit Item</button>);
+        let cancelEditButton = (<button className="CancelEditButton" onClick={this.toggleEditBarHandler}>Cancel</button>);
+        
         return(
             <div className="EntryContainer">
                 {!this.state.showEditBar? infoTab : null}
                 {this.state.showEditBar? editBar : null}
                 <div className="LogButtons">
-                    <button className="DeleteButton" onClick={this.props.deleteClick}>Delete Item</button> 
+                    {!this.state.showEditBar? deleteButton : null}
                     {this.state.showEditBar? saveButton : null}
+                    {this.state.showEditBar? cancelEditButton : null}
                     {!this.state.showEditBar? showEditBarButton : null}
                 </div>
             </div>

@@ -8,8 +8,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      showLog: false,
-      showCreator: true
+      showLog: true,
+      showCreator: false
     };
   }
 
